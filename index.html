@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Resume Screener</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="landing-page" class="page active">
+        <h1>Welcome to AI Resume Screener</h1>
+        <p>Upload your resume and get AI-driven job recommendations instantly.</p>
+        <button onclick="goToPage('upload-page')">Get Started</button>
+    </div>
+
+    <div id="upload-page" class="page">
+        <h1>Upload Your Resume</h1>
+        <p>Select your resume and let AI match you with top jobs.</p>
+        <input type="file" id="resumeUpload" accept=".pdf, .docx">
+        <button onclick="analyzeResume()">Analyze Resume</button>
+        <button class="back-btn" onclick="goToPage('landing-page')">Back</button>
+
+        <div id="result">
+            <h2>Job Recommendations</h2>
+            <ul id="jobList"></ul>
+            <button onclick="goToPage('ending-page')">Finish</button>
+        </div>
+    </div>
+
+    <div id="ending-page" class="page">
+        <h1>Thank You!</h1>
+        <p>Your resume has been screened successfully. Best of luck with your job search!</p>
+        <button onclick="goToPage('landing-page')">Return Home</button>
+    </div>
+
+    <script src="ai.js"></script>
+</body>
+</html>
